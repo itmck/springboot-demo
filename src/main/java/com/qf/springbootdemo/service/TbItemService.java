@@ -13,4 +13,7 @@ import java.util.List;
 public interface TbItemService {
     //获取所有
     List<TbItem> getAll();
+
+    //根据id获取数据
+    TbItem getItemById(Long id);
 }

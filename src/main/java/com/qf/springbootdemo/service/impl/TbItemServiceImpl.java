@@ -20,8 +20,24 @@ public class TbItemServiceImpl implements TbItemService {
     @Autowired
     private TbItemMapper tbItemMapper;
 
+    /**
+     *
+     * 获取所有item集合
+     * @return
+     */
     @Override
     public List<TbItem> getAll() {
         return tbItemMapper.getAll();
+    }
+
+    /**
+     *
+     * 根据id获取item
+     * @param id
+     * @return
+     */
+    @Override
+    public TbItem getItemById(Long id) {
+        return tbItemMapper.getItemById(id);
     }
 }

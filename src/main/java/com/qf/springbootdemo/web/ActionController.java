@@ -3,6 +3,7 @@ package com.qf.springbootdemo.web;
 import com.qf.springbootdemo.pojo.TbItem;
 import com.qf.springbootdemo.service.TbItemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,18 +24,28 @@ public class ActionController {
     @Autowired
     private TbItemService tbItemService;
 
-    @RequestMapping("/getAll")
-    public Map<String,Object> getAll(){
 
-        Map<String,Object> map = new HashMap<>();
+    @RequestMapping("/getAll")
+    public Map<String, Object> getAll() {
+
+        Map<String, Object> map = new HashMap<>();
 
         try {
-            List<TbItem> i=tbItemService.getAll();
-            map.put("list",i);
+            List<TbItem> i = tbItemService.getAll();
+            map.put("list", i);
         } catch (Exception e) {
             e.printStackTrace();
-            map.put("failed","failed");
+            map.put("failed", "failed");
         }
+        return map;
+    }
+
+    @GetMapping("list")
+    public Map<String, Object> listAll(Long id) {
+
+        Map<String, Object> map = new HashMap<>();
+        TbItem i = tbItemService.getItemById(id);
+        map.put("i", i);
         return map;
     }
 }
