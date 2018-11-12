@@ -2,11 +2,6 @@ spring:
   profiles:
   #在active处配置启动时要使用的yml文件
     active: dev
-  mvc:
-    view:
-      suffix: .jsp
-      prefix: /WEB-INF/jsp/
-
 #在application.yml中配置的属性为相同的属性.若要配置生产环境与测试环境不同.则分别配置
 #  #配置数据源
 #  datasource:
@@ -19,10 +14,14 @@ spring:
 #    #配置数据库密码
 #    password: 123456
 
-#测试 @Value() 注解的使用
-test.name: mck1
+
 
 ## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
 #mybatis:
-#  mapper-locations: classpath*:com/**/*Mapper.xml  #注意：一定要对应mapper映射xml文件的所在路径
-#  type-aliases-package: com.itmck.springbootweb.pojo  # 注意：对应实体类的路径
+  mapper-locations: classpath*:com/**/*Mapper.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.itmck.springbootdemo.pojo  # 注意：对应实体类的路径
+
+#测试 @Value() 注解的使用
+test.name: mck1
+student.name: mck
+student.age: 20

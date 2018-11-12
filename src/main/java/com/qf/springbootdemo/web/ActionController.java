@@ -28,13 +28,6 @@ public class ActionController {
     @Value("${test.name}")
     private String name;
 
-    @RequestMapping("index")
-    public String  index(){
-
-        return "index";
-    }
-
-
     @RequestMapping("/getAll")
     public Map<String, Object> getAll() {
 

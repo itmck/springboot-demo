@@ -2,7 +2,6 @@ package com.qf.springbootdemo.dao;
 
 import com.qf.springbootdemo.pojo.TbItem;
 import org.apache.ibatis.annotations.*;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -13,7 +12,6 @@ import java.util.List;
  * @Version: 1.0
  */
 @Mapper
-@Repository
 public interface TbItemMapper {
 
     @Select(value = "select * from tb_item")
